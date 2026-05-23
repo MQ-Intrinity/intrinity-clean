@@ -12,7 +12,10 @@ const fadeUp = { hidden: { opacity: 0, y: 28 }, visible: { opacity: 1, y:
 const stagger = { hidden: {}, visible: { transition: { staggerChildren:
 0.08 } } };
 const image = {
-matchday: "https://images.unsplash.com/photo-1431324155629-
+  matchday: "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=1200&q=80",
+  academy: "https://images.unsplash.com/photo-1556056504-5c7696c4c28d?auto=format&fit=crop&w=900&q=80",
+  grassroots: "https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=900&q=80",
+};
 1a6deb1dec8d?auto=format&fit=crop&w=1200&q=80",
 academy: "https://images.unsplash.com/photo-1556056504-
 5c7696c4c28d?auto=format&fit=crop&w=900&q=80",
