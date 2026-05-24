@@ -16,12 +16,6 @@ const image = {
   academy: "https://images.unsplash.com/photo-1556056504-5c7696c4c28d?auto=format&fit=crop&w=900&q=80",
   grassroots: "https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=900&q=80",
 };
-1a6deb1dec8d?auto=format&fit=crop&w=1200&q=80",
-academy: "https://images.unsplash.com/photo-1556056504-
-5c7696c4c28d?auto=format&fit=crop&w=900&q=80",
-grassroots: "https://images.unsplash.com/photo-1517466787929-
-bc90951d0974?auto=format&fit=crop&w=900&q=80",
-};
 const services = [
 { icon: Megaphone, title: "Social Growth", text: "Build a weekly
 content rhythm fans actually want to follow." },
