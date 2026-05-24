@@ -122,7 +122,7 @@ const navLinks = [
 
 function GlassPanel({ children, className = "" }) {
   return (
-    <div className={`rounded-[2rem] border border-white/10 bg-white/[0.06] shadow-2xl backdrop-blur-xl ${className}`}>
+    <div className={`rounded-2xl border border-white/10 bg-white/[0.06] shadow-2xl backdrop-blur-xl ${className}`}>
       {children}
     </div>
   );
@@ -148,10 +148,11 @@ function SectionHeader({ eyebrow, title, text }) {
 function AnimatedBackground() {
   return (
     <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden bg-[#07111f]">
+      <div className="absolute inset-0 bg-[linear-gradient(115deg,rgba(8,47,35,0.9),rgba(7,17,31,1)_45%,rgba(10,55,42,0.75)),repeating-linear-gradient(90deg,rgba(101,255,143,0.055)_0px,rgba(101,255,143,0.055)_90px,transparent_90px,transparent_180px)]" />
       <motion.div
         animate={{ x: [0, 80, 0], y: [0, -40, 0] }}
         transition={{ repeat: Infinity, duration: 14, ease: "easeInOut" }}
-        className="absolute left-[-8%] top-[10%] h-96 w-96 rounded-full bg-[#65ff8f]/20 blur-[120px]"
+        className="absolute left-[-8%] top-[10%] h-96 w-96 rounded-xl bg-[#65ff8f]/20 blur-[120px]"
       />
       <motion.div
         animate={{ x: [0, -70, 0], y: [0, 60, 0] }}
@@ -217,8 +218,8 @@ function ClubCard() {
       transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
       className="relative mx-auto max-w-sm"
     >
-      <div className="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-br from-[#65ff8f] via-[#5ee7ff] to-[#123524] opacity-45 blur-2xl" />
-      <div className="relative overflow-hidden rounded-[2.25rem] border border-white/20 bg-gradient-to-br from-[#0f1729] via-[#123524] to-[#07111f] p-5 text-white shadow-2xl">
+      <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-[#65ff8f] via-[#5ee7ff] to-[#123524] opacity-45 blur-2xl" />
+      <div className="relative overflow-hidden rounded-3xl border border-white/20 bg-gradient-to-br from-[#0f1729] via-[#123524] to-[#07111f] p-5 text-white shadow-2xl">
         <div className="absolute right-[-50px] top-[-50px] h-40 w-40 rounded-full bg-white/10" />
         <div className="flex items-start justify-between">
           <div>
@@ -229,7 +230,7 @@ function ClubCard() {
         </div>
 
         <div className="my-8 grid place-items-center">
-          <div className="grid h-32 w-32 place-items-center rounded-full border-4 border-white/30 bg-gradient-to-br from-[#65ff8f] to-[#123524] text-5xl font-black text-[#07111f] shadow-xl">
+          <div className="grid h-32 w-32 place-items-center rounded-xl border-4 border-white/30 bg-gradient-to-br from-[#65ff8f] to-[#123524] text-5xl font-black text-[#07111f] shadow-xl">
             FC
           </div>
         </div>
@@ -259,11 +260,11 @@ function InteractivePitch() {
   ];
 
   return (
-    <div className="relative mx-auto h-[520px] max-w-6xl overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-b from-[#123524] to-[#07111f] shadow-[0_0_120px_rgba(94,231,255,0.12)] md:h-[620px] md:rounded-[3rem]">
+    <div className="relative mx-auto h-[520px] max-w-6xl overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-[#123524] to-[#07111f] shadow-[0_0_120px_rgba(94,231,255,0.12)] md:h-[620px] md:rounded-3xl">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(101,255,143,0.16),_transparent_42%)]" />
-      <div className="absolute inset-5 rounded-[1.5rem] border-2 border-white/20 md:inset-8 md:rounded-[2.5rem]" />
+      <div className="absolute inset-5 rounded-[1.5rem] border-2 border-white/20 md:inset-8 md:rounded-3xl" />
       <div className="absolute bottom-5 top-5 left-1/2 w-[2px] -translate-x-1/2 bg-white/20 md:bottom-8 md:top-8" />
-      <div className="absolute left-1/2 top-1/2 h-28 w-28 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-white/20 md:h-40 md:w-40" />
+      <div className="absolute left-1/2 top-1/2 h-28 w-28 -translate-x-1/2 -translate-y-1/2 rounded-xl border-2 border-white/20 md:h-40 md:w-40" />
       <div className="absolute left-5 top-1/2 h-44 w-20 -translate-y-1/2 rounded-r-3xl border-2 border-white/20 md:left-10 md:h-52 md:w-24" />
       <div className="absolute right-5 top-1/2 h-44 w-20 -translate-y-1/2 rounded-l-3xl border-2 border-white/20 md:right-10 md:h-52 md:w-24" />
 
@@ -344,10 +345,10 @@ function FootballScrollJourney() {
         </div>
 
         <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-stretch">
-          <div className="relative min-h-[560px] overflow-hidden rounded-[2.5rem] border border-white/10 bg-gradient-to-b from-[#123524] via-[#0f1729] to-[#07111f] p-6 shadow-[0_0_120px_rgba(94,231,255,0.12)]">
-            <div className="absolute inset-6 rounded-[2rem] border-2 border-white/15" />
+          <div className="relative min-h-[560px] overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-[#123524] via-[#0f1729] to-[#07111f] p-6 shadow-[0_0_120px_rgba(94,231,255,0.12)]">
+            <div className="absolute inset-6 rounded-2xl border-2 border-white/15" />
             <div className="absolute left-1/2 top-6 bottom-6 w-[2px] -translate-x-1/2 bg-white/15" />
-            <div className="absolute left-1/2 top-1/2 h-40 w-40 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-white/15" />
+            <div className="absolute left-1/2 top-1/2 h-40 w-40 -translate-x-1/2 -translate-y-1/2 rounded-xl border-2 border-white/15" />
 
             <motion.div
               animate={{ opacity: [0.15, 0.65, 0.15], scale: [0.9, 1.2, 0.9] }}
@@ -384,7 +385,7 @@ function FootballScrollJourney() {
             <motion.div
               animate={{ x: [0, 18, 0], y: [0, -10, 0] }}
               transition={{ repeat: Infinity, duration: 6 }}
-              className="absolute bottom-8 right-8 rounded-[2rem] border border-white/10 bg-white/[0.08] p-5 backdrop-blur-xl"
+              className="absolute bottom-8 right-8 rounded-2xl border border-white/10 bg-white/[0.08] p-5 backdrop-blur-xl"
             >
               <p className="text-xs font-black uppercase tracking-[0.25em] text-[#65ff8f]">
                 Sponsor Signal
@@ -404,7 +405,7 @@ function FootballScrollJourney() {
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: 0.55, delay: index * 0.08 }}
                 whileHover={{ y: -6, scale: 1.01 }}
-                className="group rounded-[2rem] border border-white/10 bg-white/[0.06] p-6 backdrop-blur-xl transition hover:bg-white/[0.09]"
+                className="group rounded-2xl border border-white/10 bg-white/[0.06] p-6 backdrop-blur-xl transition hover:bg-white/[0.09]"
               >
                 <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
                   <div>
@@ -454,13 +455,92 @@ function StatStrip() {
 
 function PhotoTile({ src, label, className = "" }) {
   return (
-    <div className={`relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 shadow-xl ${className}`}>
+    <div className={`relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-xl ${className}`}>
       <img src={src} alt={label} className="h-full w-full object-cover opacity-80" />
       <div className="absolute inset-0 bg-gradient-to-t from-[#07111f] via-[#07111f]/20 to-transparent" />
-      <div className="absolute bottom-4 left-4 rounded-full border border-white/10 bg-[#07111f]/80 px-4 py-2 text-sm font-black text-white shadow-md backdrop-blur">
+      <div className="absolute bottom-4 left-4 rounded-xl border border-white/10 bg-[#07111f]/80 px-4 py-2 text-sm font-black text-white shadow-md backdrop-blur">
         {label}
       </div>
     </div>
+  );
+}
+
+
+function TunnelIntro() {
+  return (
+    <section className="relative min-h-screen overflow-hidden bg-[#050b14]">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_92%,rgba(101,255,143,0.28),transparent_28%),linear-gradient(180deg,#050b14_0%,#07111f_45%,#123524_100%)]" />
+      <div className="absolute inset-x-0 bottom-0 h-[42%] bg-[repeating-linear-gradient(90deg,rgba(101,255,143,0.08)_0px,rgba(101,255,143,0.08)_110px,rgba(255,255,255,0.02)_110px,rgba(255,255,255,0.02)_220px)]" />
+
+      <motion.div
+        initial={{ opacity: 1 }}
+        animate={{ opacity: [1, 0.85, 0.25] }}
+        transition={{ duration: 2.8, ease: "easeInOut" }}
+        className="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,transparent_0%,rgba(0,0,0,0.22)_28%,rgba(0,0,0,0.88)_78%)]"
+      />
+
+      <motion.div
+        initial={{ scale: 0.35, opacity: 0.2 }}
+        whileInView={{ scale: 1.35, opacity: 0.95 }}
+        transition={{ duration: 2.2, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="absolute left-1/2 top-[48%] h-56 w-56 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#65ff8f]/30 bg-[#65ff8f]/10 blur-sm"
+      />
+
+      <div className="absolute left-0 top-0 h-full w-[28%] bg-gradient-to-r from-black via-black/85 to-transparent" />
+      <div className="absolute right-0 top-0 h-full w-[28%] bg-gradient-to-l from-black via-black/85 to-transparent" />
+
+      <motion.div
+        initial={{ y: 80, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 1.1, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-6 py-24 text-center"
+      >
+        <p className="mb-5 text-xs font-black uppercase tracking-[0.45em] text-[#5ee7ff]">
+          Tunnel Vision
+        </p>
+        <h1 className="mx-auto max-w-5xl text-5xl font-black uppercase leading-[0.9] tracking-tight text-white md:text-8xl">
+          Step into the future of football marketing.
+        </h1>
+        <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-white/72 md:text-xl">
+          From tunnel walkout to pitch impact — Intrinity turns club attention into fan growth, sponsor value and proof.
+        </p>
+
+        <div className="mx-auto mt-10 grid max-w-3xl grid-cols-1 gap-3 sm:grid-cols-3">
+          {[
+            ["01", "Fan Energy"],
+            ["02", "Sponsor Impact"],
+            ["03", "Growth Proof"],
+          ].map(([number, label]) => (
+            <motion.div
+              key={label}
+              whileHover={{ y: -6 }}
+              className="border border-white/15 bg-white/[0.07] p-5 text-left shadow-[0_0_40px_rgba(94,231,255,0.08)] backdrop-blur"
+            >
+              <div className="text-sm font-black text-[#65ff8f]">{number}</div>
+              <div className="mt-2 text-xl font-black uppercase text-white">{label}</div>
+            </motion.div>
+          ))}
+        </div>
+
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ repeat: Infinity, duration: 1.8 }}
+          className="mx-auto mt-14 text-xs font-black uppercase tracking-[0.35em] text-white/45"
+        >
+          Scroll to enter the pitch
+        </motion.div>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, scaleY: 0 }}
+        whileInView={{ opacity: 1, scaleY: 1 }}
+        transition={{ duration: 1.6, delay: 0.5 }}
+        viewport={{ once: true }}
+        className="absolute bottom-0 left-1/2 h-[38%] w-[2px] origin-bottom -translate-x-1/2 bg-white/35"
+      />
+    </section>
   );
 }
 
@@ -475,7 +555,7 @@ function Hero() {
 
       <div className="relative mx-auto grid min-h-screen max-w-7xl items-center gap-12 px-6 py-28 md:grid-cols-2">
         <motion.div variants={stagger} initial="hidden" animate="visible">
-          <motion.div variants={fadeUp} className="mb-6 inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-bold text-white/85 shadow-sm backdrop-blur">
+          <motion.div variants={fadeUp} className="mb-6 inline-flex rounded-xl border border-white/15 bg-white/10 px-4 py-2 text-sm font-bold text-white/85 shadow-sm backdrop-blur">
             Football-first marketing for ambitious clubs
           </motion.div>
           <motion.h1 variants={fadeUp} className="max-w-3xl text-5xl font-black leading-[0.92] tracking-tight text-white sm:text-6xl md:text-8xl">
@@ -485,10 +565,10 @@ function Hero() {
             Grow fans, elevate sponsors and make your club look elite online.
           </motion.p>
           <motion.div variants={fadeUp} className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Button className="rounded-full bg-[#65ff8f] px-7 py-6 text-base font-black text-[#07111f] shadow-lg hover:bg-[#7dff9f]">
+            <Button className="rounded-xl bg-[#65ff8f] px-7 py-6 text-base font-black text-[#07111f] shadow-lg hover:bg-[#7dff9f]">
               Book a free club review <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
             </Button>
-            <Button variant="outline" className="rounded-full border-white/20 bg-white/10 px-7 py-6 text-base font-bold text-white hover:bg-white/15">
+            <Button variant="outline" className="rounded-xl border-white/20 bg-white/10 px-7 py-6 text-base font-bold text-white hover:bg-white/15">
               Explore the system
             </Button>
           </motion.div>
@@ -497,7 +577,7 @@ function Hero() {
               <motion.div
                 whileHover={{ y: -6, scale: 1.03 }}
                 key={item}
-                className="rounded-full border border-white/15 bg-white/10 px-5 py-3 text-sm font-black uppercase tracking-[0.2em] text-white shadow-[0_0_25px_rgba(94,231,255,0.15)] backdrop-blur"
+                className="rounded-xl border border-white/15 bg-white/10 px-5 py-3 text-sm font-black uppercase tracking-[0.2em] text-white shadow-[0_0_25px_rgba(94,231,255,0.15)] backdrop-blur"
               >
                 {item}
               </motion.div>
@@ -551,7 +631,7 @@ function LeadForm() {
             />
           </label>
         ))}
-        <Button type="submit" className="w-full rounded-full bg-[#65ff8f] py-6 font-black text-[#07111f] hover:bg-[#7dff9f]">
+        <Button type="submit" className="w-full rounded-xl bg-[#65ff8f] py-6 font-black text-[#07111f] hover:bg-[#7dff9f]">
           Request Club Review
         </Button>
       </form>
@@ -574,7 +654,7 @@ export default function IntrinityWebsite() {
               </a>
             ))}
           </div>
-          <Button className="hidden rounded-full bg-white text-[#07111f] hover:bg-white/90 md:flex">
+          <Button className="hidden rounded-xl bg-white text-[#07111f] hover:bg-white/90 md:flex">
             Book Club Review
           </Button>
           <button type="button" className="rounded-xl p-2 text-white md:hidden" aria-label="Open navigation menu">
@@ -583,6 +663,7 @@ export default function IntrinityWebsite() {
         </div>
       </nav>
 
+      <TunnelIntro />
       <Hero />
       <StatStrip />
       <FootballScrollJourney />
@@ -689,9 +770,9 @@ export default function IntrinityWebsite() {
             title="The software supports the service."
             text="The SaaS section is the reporting engine behind your marketing offer — not the whole company."
           />
-          <div className="grid gap-8 rounded-[2rem] border border-white/10 bg-white/[0.05] p-6 shadow-xl backdrop-blur-xl md:grid-cols-2 md:p-10">
+          <div className="grid gap-8 rounded-2xl border border-white/10 bg-white/[0.05] p-6 shadow-xl backdrop-blur-xl md:grid-cols-2 md:p-10">
             <div>
-              <div className="mb-5 inline-flex rounded-full bg-[#65ff8f] px-4 py-2 text-sm font-black text-[#07111f]">Software Add-On</div>
+              <div className="mb-5 inline-flex rounded-xl bg-[#65ff8f] px-4 py-2 text-sm font-black text-[#07111f]">Software Add-On</div>
               <h3 className="text-3xl font-black text-white">Club Benchmarking Dashboard</h3>
               <p className="mt-4 leading-7 text-white/70">Compare against similar clubs by sport, country, league level and follower size.</p>
               <div className="mt-7 grid gap-3 sm:grid-cols-2">
@@ -716,7 +797,7 @@ export default function IntrinityWebsite() {
               ].map(([rank, club, score]) => (
                 <div key={club} className="mb-3 flex items-center justify-between gap-4 rounded-2xl border border-white/10 bg-[#07111f]/80 p-4 last:mb-0">
                   <div className="flex items-center gap-3">
-                    <div className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-[#65ff8f] text-sm font-black text-[#07111f]">{rank}</div>
+                    <div className="grid h-8 w-8 shrink-0 place-items-center rounded-xl bg-[#65ff8f] text-sm font-black text-[#07111f]">{rank}</div>
                     <span className="font-bold text-white">{club}</span>
                   </div>
                   <span className="font-black text-[#65ff8f]">{score}</span>
@@ -775,7 +856,7 @@ export default function IntrinityWebsite() {
           {pricing.map((plan) => (
             <Card key={plan.name} className={`rounded-3xl border-white/10 text-white shadow-xl ${plan.popular ? "bg-gradient-to-br from-[#123524] to-[#0f1729]" : "bg-white/[0.06]"}`}>
               <CardContent className="p-8">
-                {plan.popular && <div className="mb-4 inline-flex rounded-full bg-[#65ff8f] px-3 py-1 text-xs font-black text-[#07111f]">Best for growth</div>}
+                {plan.popular && <div className="mb-4 inline-flex rounded-xl bg-[#65ff8f] px-3 py-1 text-xs font-black text-[#07111f]">Best for growth</div>}
                 <h3 className="text-2xl font-black text-white">{plan.name}</h3>
                 <div className="mt-4 text-4xl font-black text-white">
                   {plan.price}<span className="text-base font-medium text-white/60">{plan.price !== "Custom" ? "/month" : ""}</span>
@@ -789,7 +870,7 @@ export default function IntrinityWebsite() {
                     </div>
                   ))}
                 </div>
-                <Button className="mt-8 w-full rounded-full bg-white text-[#07111f] hover:bg-white/90">Choose package</Button>
+                <Button className="mt-8 w-full rounded-xl bg-white text-[#07111f] hover:bg-white/90">Choose package</Button>
               </CardContent>
             </Card>
           ))}
@@ -815,7 +896,7 @@ export default function IntrinityWebsite() {
       </section>
 
       <section className="relative mx-auto max-w-7xl px-6 py-24 md:py-28">
-        <div className="overflow-hidden rounded-[2.5rem] border border-white/10 bg-gradient-to-br from-[#123524] via-[#0f1729] to-[#07111f] p-6 shadow-2xl md:p-12">
+        <div className="overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#123524] via-[#0f1729] to-[#07111f] p-6 shadow-2xl md:p-12">
           <div className="grid gap-8 md:grid-cols-2 md:items-center">
             <div>
               <p className="mb-4 text-xs font-black uppercase tracking-[0.35em] text-[#5ee7ff]">Free Club Review</p>
