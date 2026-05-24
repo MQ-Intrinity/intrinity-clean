@@ -87,19 +87,69 @@ function Hero(){return <header className="relative min-h-screen overflow-hidden"
 function LeadForm(){const fields=["Name","Club","Email","League","Social media link"];return <GlassPanel className="p-6"><form className="space-y-4">{fields.map(field => <label key={field} className="block"><span className="sr-only">{field}</span><input type={field === "Email" ? "email" : "text"} placeholder={field} className="w-full rounded-2xl border border-white/10 bg-[#07111f]/70 px-4 py-4 text-white placeholder:text-white/45 outline-none transition focus:border-[#5ee7ff] focus:ring-2 focus:ring-[#5ee7ff]/30" /></label>)}<Button type="submit" className="w-full rounded-full border border-[#65ff8f]/40 bg-[#65ff8f]/20 py-6 font-black text-[#dffcff] shadow-[0_0_35px_rgba(101,255,143,0.18)] backdrop-blur-xl hover:bg-[#65ff8f]/30 hover:text-white">Request Club Review</Button></form></GlassPanel>}
 
 export default function IntrinityWebsite() {
-  return <div className="min-h-screen bg-[#07111f] text-white"><AnimatedBackground />
-    <nav className="sticky top-0 z-50 border-b border-white/10 bg-[#07111f]/80 backdrop-blur-xl"><div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4"><Logo /><div className="hidden items-center gap-8 text-sm font-bold text-white/70 md:flex">{navLinks.map(([label, href]) => <a key={href} href={href} className="transition hover:text-[#65ff8f]">{label}</a>)}</div><Button className="hidden rounded-full border border-white/15 bg-white/[0.09] text-white shadow-[0_0_30px_rgba(94,231,255,0.12)] backdrop-blur-xl hover:bg-white/[0.15] md:flex">Book Club Review</Button><button type="button" className="rounded-xl p-2 text-white md:hidden" aria-label="Open navigation menu"><Menu aria-hidden="true" /></button></div></nav>
-    <Hero /><StatStrip />
-    <section className="relative overflow-hidden px-6 py-24 md:py-28"><div className="mx-auto max-w-7xl"><SectionHeader eyebrow="Interactive Club System" title="Explore Intrinity like a tactical setup." text="Hover each zone to see how marketing, content, sponsors and reporting connect." /><InteractivePitch /></div></section>
-    <section id="services" className="relative mx-auto max-w-7xl px-6 py-24"><SectionHeader eyebrow="Core Services" title="Less noise. More club growth." text="Everything is designed around what a football club actually needs: fans, matchday attention, sponsor value and proof." /><motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">{services.map(service => <motion.div key={service.title} variants={fadeUp}><Card className="h-full rounded-3xl border-white/10 bg-white/[0.06] text-white shadow-xl transition hover:-translate-y-1 hover:bg-white/[0.09]"><CardContent className="p-7"><div className="mb-5 grid h-14 w-14 place-items-center rounded-2xl bg-[#65ff8f]/15 ring-1 ring-[#65ff8f]/30"><service.icon className="h-8 w-8 text-[#65ff8f]" aria-hidden="true" /></div><h3 className="mb-3 text-xl font-black text-white">{service.title}</h3><p className="leading-7 text-white/65">{service.text}</p></CardContent></Card></motion.div>)}</motion.div></section>
-    <section id="proof" className="relative bg-[#0f1729] px-6 py-24 md:py-28"><div className="mx-auto grid max-w-7xl items-center gap-12 md:grid-cols-2"><div><p className="mb-4 text-xs font-black uppercase tracking-[0.35em] text-[#5ee7ff]">Proof & Reporting</p><h2 className="text-4xl font-black leading-tight text-white md:text-6xl">Make progress obvious.</h2><p className="mt-5 text-lg leading-8 text-white/70">Club owners and sponsors should instantly see what improved and why it matters.</p><div className="mt-8 grid gap-4 sm:grid-cols-2">{['Social growth','Sponsor visibility','Content consistency','Fan engagement'].map(item => <GlassPanel key={item} className="p-4 font-bold text-white"><CheckCircle2 className="mb-2 h-5 w-5 text-[#65ff8f]" aria-hidden="true" />{item}</GlassPanel>)}</div></div><GlassPanel className="p-6"><div className="flex items-center justify-between gap-6"><div><p className="text-sm font-bold text-[#5ee7ff]">Monthly Club Report</p><h3 className="text-2xl font-black text-white">Marketing Scorecard</h3></div><Star className="h-9 w-9 shrink-0 fill-[#65ff8f] text-[#65ff8f]" aria-hidden="true" /></div><div className="mt-6 space-y-3">{[["Content Consistency","A-"],["Fan Engagement","+22%"],["Sponsor Visibility","Strong"],["Next Focus","Matchday Reels"]].map(([label,value]) => <div key={label} className="flex justify-between gap-4 rounded-2xl border border-white/10 bg-[#07111f]/70 p-4"><span className="font-bold text-white/65">{label}</span><span className="font-black text-white">{value}</span></div>)}</div><div className="mt-6 rounded-2xl border border-[#65ff8f]/20 bg-[#65ff8f]/10 p-4 text-sm font-bold leading-6 text-[#dffcff]">Next move: create 3 player-led Reels before the next home fixture and integrate the main sponsor into the story sequence.</div></GlassPanel></div></section>
-    <section className="relative mx-auto max-w-7xl px-6 py-24 md:py-28"><SectionHeader eyebrow="The Method" title="A simple four-step club growth system." text="Easy for club directors to understand. Strong enough for commercial teams to use." /><div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">{process.map(([number,title,text]) => <GlassPanel key={title} className="p-7"><div className="mb-5 text-5xl font-black text-[#65ff8f]">{number}</div><h3 className="text-xl font-black text-white">{title}</h3><p className="mt-3 leading-7 text-white/65">{text}</p></GlassPanel>)}</div></section>
-    <section id="platform" className="relative bg-[#0f1729] px-6 py-24 md:py-28"><div className="mx-auto max-w-7xl"><SectionHeader eyebrow="Intrinity Platform" title="The software supports the service." text="The SaaS section is the reporting engine behind your marketing offer — not the whole company." /><div className="grid gap-8 rounded-[2rem] border border-white/10 bg-white/[0.05] p-6 shadow-xl backdrop-blur-xl md:grid-cols-2 md:p-10"><div><div className="mb-5 inline-flex rounded-full bg-[#65ff8f] px-4 py-2 text-sm font-black text-[#07111f]">Software Add-On</div><h3 className="text-3xl font-black text-white">Club Benchmarking Dashboard</h3><p className="mt-4 leading-7 text-white/70">Compare against similar clubs by sport, country, league level and follower size.</p><div className="mt-7 grid gap-3 sm:grid-cols-2">{platformFeatures.map(item => <div key={item} className="flex items-center gap-2 font-bold text-white/80"><CheckCircle2 className="h-5 w-5 text-[#65ff8f]" aria-hidden="true" />{item}</div>)}</div></div><GlassPanel className="p-5"><div className="mb-4 flex items-center justify-between"><h4 className="text-xl font-black text-white">Benchmark Table</h4><Zap className="h-6 w-6 text-[#65ff8f]" aria-hidden="true" /></div>{[["1","Northbridge FC","91"],["2","City Athletic","87"],["3","Intrinity Sample FC","82"],["4","Eastside United","79"]].map(([rank, club, score]) => <div key={club} className="mb-3 flex items-center justify-between gap-4 rounded-2xl border border-white/10 bg-[#07111f]/80 p-4 last:mb-0"><div className="flex items-center gap-3"><div className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-[#65ff8f] text-sm font-black text-[#07111f]">{rank}</div><span className="font-bold text-white">{club}</span></div><span className="font-black text-[#65ff8f]">{score}</span></div>)}</GlassPanel></div></div></section>
-    <section id="sponsors" className="relative mx-auto max-w-7xl px-6 py-24 md:py-28"><SectionHeader eyebrow="Sponsor Activation" title="Make sponsors feel the momentum." text="Turn partner visibility into content, campaigns and proof that can support renewals." /><div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">{[["Sponsor Decks",ShieldCheck],["Campaign Reports",BarChart3],["Brand Visibility",Target],["Renewal Proof",Handshake]].map(([item,Icon]) => <GlassPanel key={item} className="p-7"><Icon className="mb-5 h-8 w-8 text-[#5ee7ff]" aria-hidden="true" /><h3 className="text-lg font-black text-white">{item}</h3><p className="mt-3 text-sm leading-6 text-white/65">Show sponsors why backing your club is worth it.</p></GlassPanel>)}</div></section>
-    <section className="relative bg-[#0f1729] px-6 py-24 md:py-28"><div className="mx-auto grid max-w-7xl items-center gap-10 md:grid-cols-2"><PhotoTile src={image.matchday} label="Football-first visuals" className="h-[360px] md:h-[430px]" /><div><p className="mb-4 text-xs font-black uppercase tracking-[0.35em] text-[#5ee7ff]">Experience Design</p><h2 className="text-4xl font-black leading-tight text-white md:text-6xl">Built to feel like football, not a template.</h2><p className="mt-5 text-lg leading-8 text-white/70">The experience prioritises energy, tactical visuals, heatmaps, movement and clear actions.</p><div className="mt-8 grid gap-4 sm:grid-cols-2">{["Motion-first","Pitch-led","Sponsor-focused","Report-ready"].map(item => <GlassPanel key={item} className="p-4 font-black text-white">{item}</GlassPanel>)}</div></div></div></section>
-    <section id="pricing" className="relative mx-auto max-w-7xl px-6 py-24 md:py-28"><SectionHeader eyebrow="Packages" title="Start simple. Scale with proof." text="Pricing should feel clear enough for small clubs and serious enough for growing ones." /><div className="grid gap-6 md:grid-cols-3">{pricing.map(plan => <Card key={plan.name} className={`rounded-3xl border-white/10 text-white shadow-xl ${plan.popular ? "bg-gradient-to-br from-[#123524] to-[#0f1729]" : "bg-white/[0.06]"}`}><CardContent className="p-8">{plan.popular && <div className="mb-4 inline-flex rounded-full bg-[#65ff8f] px-3 py-1 text-xs font-black text-[#07111f]">Best for growth</div>}<h3 className="text-2xl font-black text-white">{plan.name}</h3><div className="mt-4 text-4xl font-black text-white">{plan.price}<span className="text-base font-medium text-white/60">{plan.price !== "Custom" ? "/month" : ""}</span></div><p className="mt-3 text-white/70">{plan.description}</p><div className="mt-7 space-y-3">{plan.items.map(item => <div key={item} className="flex items-center gap-3 font-bold text-white/85"><CheckCircle2 className="h-5 w-5 text-[#65ff8f]" aria-hidden="true" />{item}</div>)}</div><Button className="mt-8 w-full rounded-full bg-white text-[#07111f] hover:bg-white/90">Choose package</Button></CardContent></Card>)}</div></section>
-    <section id="about" className="relative bg-[#0f1729] px-6 py-24 md:py-28"><div className="mx-auto grid max-w-7xl items-center gap-10 md:grid-cols-2"><div><p className="mb-4 text-xs font-black uppercase tracking-[0.35em] text-[#65ff8f]">About Intrinity</p><h2 className="text-4xl font-black leading-tight text-white md:text-6xl">A sports marketing company for clubs that want to grow properly.</h2><p className="mt-6 text-lg leading-8 text-white/70">Intrinity combines football-first marketing services with performance technology, helping clubs look sharper, grow fans and show sponsors clear value.</p><div className="mt-8 flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.06] p-4 text-white"><MapPin className="h-6 w-6 shrink-0 text-[#5ee7ff]" aria-hidden="true" /><span className="font-bold">Built for UK football clubs first — scalable to wider sport later.</span></div></div><div className="grid gap-5 sm:grid-cols-2"><PhotoTile src={image.academy} label="Academies" className="h-64" /><PhotoTile src={image.grassroots} label="Grassroots" className="h-64 sm:mt-10" /></div></div></section>
-    <section className="relative mx-auto max-w-7xl px-6 py-24 md:py-28"><div className="overflow-hidden rounded-[2.5rem] border border-white/10 bg-gradient-to-br from-[#123524] via-[#0f1729] to-[#07111f] p-6 shadow-2xl md:p-12"><div className="grid gap-8 md:grid-cols-2 md:items-center"><div><p className="mb-4 text-xs font-black uppercase tracking-[0.35em] text-[#5ee7ff]">Free Club Review</p><h2 className="text-4xl font-black leading-tight text-white md:text-6xl">Ready to make your club look elite online?</h2><p className="mt-5 text-lg leading-8 text-white/70">Send your club details and get a simple review of your marketing, content, sponsor visibility and growth opportunities.</p></div><LeadForm /></div></div></section>
-    <footer className="relative border-t border-white/10 bg-[#07111f] px-6 py-10"><div className="mx-auto flex max-w-7xl flex-col justify-between gap-6 md:flex-row md:items-center"><Logo /><div className="flex gap-6 text-sm font-bold text-white/60"><a href="#" className="hover:text-white">Privacy</a><a href="#" className="hover:text-white">Terms</a><a href="#" className="hover:text-white">Contact</a></div></div></footer>
-  </div>;
+  return (
+    <div className="min-h-screen bg-[#07111f] text-white">
+
+      <EntranceIntro />
+
+      <AnimatedBackground />
+
+      <nav className="sticky top-0 z-50 border-b border-white/10 bg-[#07111f]/85 backdrop-blur-xl">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+          <Logo />
+
+          <div className="hidden items-center gap-8 text-sm font-bold text-white/70 md:flex">
+            {navLinks.map(([label, href]) => (
+              <a
+                key={href}
+                href={href}
+                className="transition hover:text-[#66ff91]"
+              >
+                {label}
+              </a>
+            ))}
+          </div>
+
+          <GlassButton className="hidden md:flex">
+            Book Club Review
+          </GlassButton>
+
+          <button
+            type="button"
+            className="rounded-xl p-2 text-white md:hidden"
+            aria-label="Open navigation menu"
+          >
+            <Menu aria-hidden="true" />
+          </button>
+        </div>
+      </nav>
+
+      <TunnelIntro />
+      <Hero />
+      <ProofStrip />
+      <Routes />
+      <FinalCTA />
+
+      <footer className="relative border-t border-white/10 bg-[#07111f] px-6 py-10">
+        <div className="mx-auto flex max-w-7xl flex-col justify-between gap-6 md:flex-row md:items-center">
+          <Logo />
+
+          <div className="flex gap-6 text-sm font-bold text-white/60">
+            <a href="#" className="hover:text-white">
+              Privacy
+            </a>
+
+            <a href="#" className="hover:text-white">
+              Terms
+            </a>
+
+            <a href="#" className="hover:text-white">
+              Contact
+            </a>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  );
 }
